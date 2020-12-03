@@ -42,7 +42,7 @@ public class Email {
         Pattern pattern = Pattern.compile(regex);
         Scanner scanner = new Scanner(System.in);
 
-        int counter = 0;
+        char continued = 'n';
 
        do {
            System.out.println("Please enter an email address: ");
@@ -57,8 +57,7 @@ public class Email {
                System.out.println("\nThe email is " + emailAddress + " is invalid");
            }
            System.out.println("\nWould you like to search again? y/n");
-           String continued = scanner.nextLine();
-           if (continued.equals("n")) counter++;
-       } while (counter != 1);
+           continued = scanner.next().charAt(0);
+       } while (continued == 'y');
     }
 }
